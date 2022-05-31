@@ -1,0 +1,52 @@
+body {
+	background-color: #333333;
+}
+
+.terminal {
+    --color: white;
+    --background: #333333;
+    --link-color: darkblue;
+    --size: 1.5;
+}
+
+.cmd-cursor {
+    --original-color: white;
+}
+.cmd {
+    --color: white;
+}
+
+.cmd-prompt {
+    --color: #0f0;
+}
+
+a {
+	color: #0bc;
+	text-decoration: none;
+}
+
+#a {
+	color: #0f0;
+}
+
+#b {
+	color: #0bc;
+}
+
+#c {
+	color: #ff0096;
+}
+
+#k {
+    	animation: change 1s;
+}
+
+#op{
+    	color: #888888
+}
+
+@keyframes change {
+    	0%  { color:  #0f0; }
+    	50% { color:  #0f0; }
+    	99% { color: black; }
+}

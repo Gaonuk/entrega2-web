@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: "bitmap";
+            src: url("fonts/8bitOperatorPlus8-Regular.ttf");
+        }
+
+        body {
+            background-image: url("img/space.gif");
+
+        }
+
+        #name {
+            text-align: center;
+            font-family: "bitmap";
+        }
+
+        #me {
+            display: grid;
+            grid-template-columns: 0.3fr 0.2fr;
+            grid-template-rows: 0.2fr 0.7fr 0.8fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            justify-content: center;
+            border-radius: 25px 25px 0px 0px;
+
+            background-color: black;
+            color: beige;
+            padding: 10px;
+            margin: auto;
+            width: 50%;
+            column-gap: 150px;
+
+        }
+
+        #name {
+            grid-area: 1 / 1 / 2 / 3;
+            -webkit-text-stroke: 0.1px blueviolet;
+        }
+
+        #pf>img {
+            border-radius: 25px;
+            grid-area: 2 / 1 / 3 / 2;
+            ;
+
+        }
+
+
+        #contact {
+            grid-area: 2 / 2 / 3 / 3;
+            ;
+        }
+
+        #about {
+            grid-area: 3 / 1 / 4 / 3;
+            ;
+        }
+
+        #experiencia {
+            background-color: black;
+            color: beige;
+            font-family: "bitmap";
+            justify-content: center;
+            border-radius: 10px;
+
+        }
+
+        .tit {
+            justify-content: center;
+            text-align: center;
+        }
+
+        #end {
+            font-family: "bitmap";
+            color: beige;
+            font-size: large;
+            -webkit-text-stroke: 0.1px blueviolet;
+            background-color: black;
+            border-radius: 10px;
+            text-align: center;
+
+        }
+        #st{
+            justify-content: center;
+            text-align: center;
+        }
+        #fish>img{
+            
+            border-radius: 20px;
+        }
+        #fish{
+            justify-content: center;
+            text-align: center;
+        }
+
+        #continuar {
+            font-family: "bitmap";
+            display: grid;
+            grid-template-columns: 0.3fr 0.2fr;
+            grid-template-rows: 0.2fr 0.7fr 0.8fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            background-color: black;
+            border-radius: 0px 0px 25px 25px;
+            color: beige;
+            padding: 10px;
+            margin: auto;
+            justify-content: center;
+            width: 50%;
+            column-gap: 150px;
+        }
+
+        .cont {
+            grid-area: 1 / 1 / 2 / 3;
+            text-align: center;
+        }
+
+        #countdown {
+            grid-area: 2 / 1 / 3 / 3;
+            text-align: center;
+        }
+
+
+        .button {
+            font-family: "bitmap";
+            grid-area: 3 / 1 / 4 / 2;
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+
+        }
+
+        #buttono {
+            font-family: "bitmap";
+            grid-area: 3 / 2 / 4 / 3;
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: red;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        #buttono:hover {
+            background-color: #F34040;
+        }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        #buttono:active {
+            background-color: #F34040;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: black;
+            justify-content: center;
+            text-align: center;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 0.5fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            /* Could be more or less, depending on screen size */
+        }
+
+        #exp1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        #gameover {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        var timeleft = 15;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById("countdown").innerHTML = "Finished";
+                /*aquí agregar acción cuando el countdow termine */
+            } else {
+                document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+            }
+            timeleft -= 1;
+        }, 1000);
+        function revelar() {
+            var x = document.getElementById("experiencia");
+            if (x.style.display == "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+    </script>
+    <script src="Getmodal.js" defer></script>
+</head>
+
+<body>
+    <!--<h1 id="name">Andrés Martínez Retamales</h1>-->
+    <div id="me">
+        <div id="name">
+            <h1>Andrés Martínez Retamales</h1>
+        </div>
+        <div id="pf">
+            <img src="img/pp.jpg" width="150" height="150" alt="Perfil">
+        </div>
+        <div id="contact">
+            <h2>Contacto</h2>
+            <p>amartnez@uc.cl</p>
+            <p>+56988521453</p>
+            <a href="https://www.linkedin.com/in/andres-martinez-retamales/"> <img src="img/linkedins.png"> </a>
+        </div>
+        <br>
+
+        <!--------------------------------------------------------------------->
+        <div id="about">
+            <h2>Sobre mi </h2>
+            <p>Tengo 22 años y soy apasionado por los temas ligados a la tecnología y la innovación.
+                Soy oriundo de Puerto Montt y entre mis hobbies está desarmar y tratar de arreglar equipos electrónicos
+                y la
+                pesca con mosca.</p>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="gameover">
+                <img src="img/QeMS.gif" alt="a">
+            </div>
+            <div id="exp1">
+                <img src="img/explosion.gif" alt="a">
+            </div>
+
+        </div>
+
+    </div>
+    <!---------------------------------------------------------->
+    <div id="continuar">
+        <h2 class="cont">Continue?</h2>
+        <div id="countdown"></div>
+        <!-- aquí agregar un contador desde 10 como en los juegos de pelea, falta configurar el botón de no
+    para que sea color rojo, si se decide seguir, mostrar el resto del cv, si no no-->
+        <div id="si">
+            <button class="button" onclick="javascript:revelar()">SI</button>
+        </div>
+        <div id="no">
+            <button id="buttono">NO</button>
+        </div>
+
+    </div>
+    <div id="experiencia" style="display: none;">
+
+        <div class="tit">
+            <h2>Hobbies</h2>
+        </div>
+        <h3>- PC gaming </h3>
+        <p>Uno de mis hobbies favoritos es jugar PC, lo cual hago desde aproximadamente los 13 años, aunque en algunas 
+            oportunidades he dejado de hacerlo ya sea por tiempo o por interesarme momentaneamente en otra cosa como el deporte, siempre vuelvo a los videojuegos para compartir con amigos.Irónicamente ahora que después de años pude armar 
+            mi computador, ya no tengo tanto tiempo para utilizarlo.
+            </p>
+            <div id="st">
+            <img src="img/steam.jpg" alt="">
+            </div>
+        <h3>- Pesca</h3>
+        <p>Otro de mis hobbies y uno muy presente en mi vida es la pesca debido a la influencia de mi Papá 
+            que desde que prácticamente tengo memoria estuvo exponiendome a los ríos y lagos acompañado de una caña. Lo que 
+        con el pasar del tiempo convergió en mi amor por los paisajes con cuerpos fluviales y llenos de naturaleza.</p>
+        <div id="fish">
+            <img src="https://preview.redd.it/7o49u8yfdhc31.png?auto=webp&s=f4223dcf9d03e81280d377caab31a9548d73c433" height=200 width=300 alt="">
+
+        </div>
+        <div class="tit">
+            <h2>Experiencia</h2>
+        </div>
+
+        <h3 class="exp">- 2022 Coordinador General de CPU </h3>
+        <p>Me desempeño tomando decisiones y supervisando el funcionamiento de una iniciativa estudiantil de ingeniería
+            de la
+            cual formo parte desde 2018.
+            En la cual como técnicos restauramos computadores para posteriormente donarlos a personas en necesidad con
+            el
+            objetivo de reducir la brecha digital mientras también disminuímos la basura electrónica.</p>
+
+        <h3 class="exp">- 2022 Coordinador campaña Reutiliza para Ingeniería Sin Fronteras</h3>
+        <p> Actualmente me encuentro coordinando la campaña Reutiliza de Ingeniería Sin Fronteras que se encuentra
+            trabajando
+            con Entel.
+            Me encargo de organizar las jornadas de refacción y de asistir en el diagnóstico de equipos para poder hacer
+            una
+            restauración rápida y segura. </p>
+
+        <h3 class="exp">- 2022 Ayudante curso ING2030, Investigación, innovación y Emprendimiento</h3>
+        <p>- Soy actual profesor asistente del curso ING2030 donde se insta a buscar una problemática real en torno a un
+            tema
+            entregado, al cual se le pueda desdarrollar una solución tecnológica que pueda ser prototipada y finalmente
+            se pueda
+            crear un emprendimiento al respecto.</p>
+
+        <h3 class="exp">- 2021 Proyecto de Consultoría para la cooperativa Banca.me startup.</h3>
+        <p>- Nos encargamos de hacer un informe financiero del status quo de la competencia en torno a las colocaciones
+            que
+            tenían vigentes.</p>
+
+
+
+        <div id="end">
+            <h1>The end, thanks for playing</h1>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

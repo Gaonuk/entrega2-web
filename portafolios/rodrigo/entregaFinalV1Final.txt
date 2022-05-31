@@ -1,0 +1,15 @@
+<span>Ad Astra Per Aspera</span> 
+
+<p>Hola! Soy Rodrigo Gaona. Estoy actualmente en 5to de Ingenieria Civil con Major en Ingenieria de Software </p>
+<p>Me encanta programar, jugar videojuegos, ver series, leer libros de ficcion ya sea fantastica o ciencia</p>
+<p>Me fascinan las cosas relacionadas con la tecnologia, ya sea Robotica, Ingenieria Aeroespacial, Inteligencia Artificial o Criptomonedas y Finanzas Descentralizadas</p>
+<p>Trabaje como Ingeniero de Software durante 6 meses en una startup financiera llamada <a href="https://www.floid.app/en/home/">Floid</a></p>
+<p>Actualmente estoy trabjando part-time para una startup de Criptomonedas llamada <a href="https://www.archfinance.io/">Arch</a></p>
+<p>Fui ayudante del curso Ingenieria de Software IIC2143 durante el semestre 2020-2</p>
+<p>Trabaje como voluntario para el Globan Engineering Deans Council 2019</p>
+<p>Un dato freak: Mi nombre va a ir al espacio en un satelite que se lanza en agosoto del 2022</p>
+<p>Aqui puedes ver mis redes sociales</p>
+<a href="https://cl.linkedin.com/in/rgaonag">LinkedIn</a>
+<a href="https://github.com/Gaonuk/">Github</a>
+
+<p>Saludos!</p>

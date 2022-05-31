@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <template id="greetings">
+       _____                    __  ______              _           __
+      / ___/__ ____  ___  __ __/ /_/_  __/__ ______ _  (_)__  ___ _/ /
+     / (_ / _ `/ _ \/ _ \/ // /  '_// / / -_) __/  ' \/ / _ \/ _ `/ / 
+     \___/\_,_/\___/_//_/\_,_/_/\_\/_/  \__/_/ /_/_/_/_/_//_/\_,_/_/  
+                                                                      
+    </template>
+    <script>
+      let storedMessages = [];
+      let files = ["entregaV1FinalFinal.txt", "entregaFinalV1Final.txt", "entregaFinalFinalV1.txt"];
+      let test;
+      for (const file of files) {
+        $.get(
+        file,
+        function (data) {
+          storedMessages.push(data);
+        },
+        "text"
+      );
+      }
+      $.get(
+        "descripcion.txt",
+        function (data) {
+          test = data;
+        },
+        'html'
+      )
+    </script>
+    <script defer>
+      $("body").terminal(
+        {
+          hola: function (what) {
+            this.echo("Hola, " + what + ". Bienvenido a esta Terminal.");
+          },
+          ayuda: function () {
+            this.echo(` Estos son los comandos disponibles:
+    hola: Comando para saludar! (ej: hola Rodrigo)
+    leer: Comando para leer un archivo segun su numero! (ej: leer 0)
+    mostrar: Comando para ver que archivos hay y sus respectivos numeros!
+    clear: Comando para limpiar la consola!
+            `);
+          },
+          mostrar: function() {
+            for(let i = 0; i < files.length; i++) {
+              this.echo(`${i}: ${files[i]}`)
+            }
+          },
+          leer: function(i) {
+            if (i == 1) {
+              this.echo($(storedMessages[i]))
+            } else {
+              this.echo(storedMessages[i])
+            }
+          }
+        },
+        {
+          greetings: greetings.innerHTML
+        }
+      );
+    </script>
+  </body>
+</html>
